@@ -40,18 +40,18 @@ var BGMusic;
 
 function setup() {
 
-  playerImg = loadImage('Images/Car.png')
-  truckImg = loadImage('Images/Ambulance2.png')
-  roadImg = loadImage('Images/RoadImg.png')
-  fuelImg = loadImage('Images/Fuel.png')
-  policeCImg = loadImage('Images/Police2.png')
-  coolCar1Img  = loadImage('Images/audi2.png')
-  car2Img = loadImage('Images/Black_viper2.png')
+ // playerImg = loadImage('Images/Car.png')
+//  truckImg = loadImage('Images/Ambulance2.png')
+ // roadImg = loadImage('Images/RoadImg.png')
+ // fuelImg = loadImage('Images/Fuel.png')
+//  policeCImg = loadImage('Images/Police2.png')
+//  coolCar1Img  = loadImage('Images/audi2.png')
+//  car2Img = loadImage('Images/Black_viper2.png')
 
   glugSound = loadSound('glug.mp3')
   scrapeSound = loadSound('scrape.mp3')
 
-  gameFont = loadFont('GameFont.ttf')
+ // gameFont = loadFont('GameFont.ttf')
 
   canW = windowWidth; 
   canH = windowHeight; 
@@ -65,20 +65,20 @@ function setup() {
 
   var truckRandomY = random(canH/1.02, canH/0.8);
 
-  truckRandomImg = [policeCImg, coolCar1Img, car2Img, truckImg];
+ // truckRandomImg = [policeCImg, coolCar1Img, car2Img, truckImg];
 
-  truck1Img = random(truckRandomImg) 
-  truck2Img = random(truckRandomImg) 
-  truck3Img = random(truckRandomImg) 
-  truck4Img = random(truckRandomImg) 
+//  truck1Img = random(truckRandomImg) 
+//  truck2Img = random(truckRandomImg) 
+//  truck3Img = random(truckRandomImg) 
+//  truck4Img = random(truckRandomImg) 
 
   createCanvas(canW, canH);
 
   player = createSprite((windowWidth)/2, canH/2, carWidth/2, carHeight/2);
-  truck = new Truck((canW * (800/480))/2, truckRandomY, carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed), truck1Img);
-  truck2 = new Truck((canW * (600/480))/2, truckRandomY + random(200, 400), carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed), truck2Img);
-  truck3 = new Truck((canW * (400/480))/2, truckRandomY + random(100, 200), carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed), truck3Img);
-  truck4 = new Truck((canW * (200/480))/2, truckRandomY + random(500, 600), carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed), truck4Img);
+  truck = new Truck((canW * (800/480))/2, truckRandomY, carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed));
+  truck2 = new Truck((canW * (600/480))/2, truckRandomY + random(200, 400), carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed));
+  truck3 = new Truck((canW * (400/480))/2, truckRandomY + random(100, 200), carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed));
+  truck4 = new Truck((canW * (200/480))/2, truckRandomY + random(500, 600), carWidth, carHeight, random(truckMinSpeed, truckMaxSpeed));
   fuel = new Fuel(((Math.round(random(fuelRandomNum))) * 100)/2, -truckRandomY, canW/10, canH/10, 10, fuelImg);
   
   startButton = createImg('Images/PlayButton.png')
@@ -126,10 +126,10 @@ function draw() {
       BY2 = -(canH * 1.9)/2;
     }
 
-  truck.changeImage(truck1Img)
-  truck2.changeImage(truck2Img)
-  truck3.changeImage(truck3Img)
-  truck4.changeImage(truck4Img)
+ // truck.changeImage(truck1Img)
+ // truck2.changeImage(truck2Img)
+//  truck3.changeImage(truck3Img)
+//  truck4.changeImage(truck4Img)
 
   truck.display();
   truck2.display();
@@ -233,7 +233,7 @@ if(isTouching(player, truck4)){
   if(truck.y < displayHeight - truckDelay){
 
     truck.y = displayHeight
-    truck1Img = random(truckRandomImg) 
+   // truck1Img = random(truckRandomImg) 
 
   }
   truckDelay = random(canH * 1.68, canH * 2.1); //fix hardcode
@@ -241,7 +241,7 @@ if(isTouching(player, truck4)){
   if(truck2.y < displayHeight - truckDelay){
      
     truck2.y = displayHeight
-    truck2Img = random(truckRandomImg) 
+   // truck2Img = random(truckRandomImg) 
 
   }
   truckDelay = random(canH * 1.68, canH * 2.1); //fix hardcode
@@ -249,7 +249,7 @@ if(isTouching(player, truck4)){
   if(truck3.y < displayHeight - truckDelay){
      
     truck3.y = displayHeight
-    truck3Img = random(truckRandomImg) 
+  //  truck3Img = random(truckRandomImg) 
 
   }
   truckDelay = random(canH * 1.68, canH * 2.1); //fix hardcode
@@ -257,7 +257,7 @@ if(isTouching(player, truck4)){
   if(truck4.y < displayHeight - truckDelay){
      
     truck4.y = displayHeight
-    truck4Img = random(truckRandomImg) 
+   // truck4Img = random(truckRandomImg) 
 
   }
   truckDelay = random(canH * 1.68, canH * 2.1); //fix hardcode
