@@ -90,7 +90,7 @@ function setup() {
   highScore = database.ref('HighScore')
   highScore.on('value', readScore)
 
-  BGMusic = createAudio('bgmusic.mp3')
+ // BGMusic = createAudio('bgmusic.mp3')
 }
 
 function draw() {
